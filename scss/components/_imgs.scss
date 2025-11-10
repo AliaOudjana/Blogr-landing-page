@@ -1,0 +1,14 @@
+@use '../util' as u;
+
+.desktop{
+    
+    @include u.mobile{
+        display: none;
+    }
+}
+
+.mobile{
+    @include u.desktop{
+        display: none;
+    }
+}

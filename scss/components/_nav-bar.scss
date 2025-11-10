@@ -1,0 +1,120 @@
+@use '../util' as u;
+
+.nav-desktop{
+    @include u.flex-nowrap;
+    @include u.mobile{
+        display: none;
+    }
+}
+
+.dropdown{
+    position: relative;
+
+    &:hover{
+        & .drop-btn{
+            text-decoration: underline;
+        }
+        & .dropdown-content{
+            display: flex;
+        }
+        & .drop-btn::after{
+            rotate: -180deg;
+        }
+    }
+
+    .drop-btn{
+        color: var(--white);
+        background: transparent;
+        border: none;
+        display: flex;
+        gap: 0.5rem;
+        padding: 1rem 0;
+        &::after{
+            content: url('../assets/images/icon-arrow-light.svg');
+            transition: 0.5s;
+        }
+    }
+
+    .dropdown-content{
+        position: absolute;
+        display: none;
+        z-index: 99;
+        background: var(--white);
+        padding: 2rem 3.5rem 2rem 1rem;
+        width: 9rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        @include u.menu-style;
+        
+        a{
+            text-decoration: none;
+            color: var(--gray-dark);
+        }
+        a:hover{
+            font-weight: 700;
+        }
+    }
+}
+
+.nav-mobile{
+    display: none;
+    background: var(--white);
+    padding: 1.5rem;
+    z-index: 999;
+    width: 90%;
+    border-radius: 0.5rem;
+    @include u.menu-style;
+    position: absolute;
+    top: 7rem;
+    right: 5%;
+    left: 5%;
+}
+
+.dropdown-mobile{
+    width: 100%;
+    @include u.flex-column;
+    &:hover{
+        & .dropdown-content{
+            display: flex;
+        }
+        & .drop-btn{
+            color: var(--gray-medium);
+        }
+        & .drop-btn::after{
+            rotate: -180deg;
+        }
+    }
+
+    .drop-btn{
+        color: var(--gray-dark);
+        background: transparent;
+        border: none;
+        display: flex;
+        gap: 0.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        
+        &::after{
+            transition: 0.5s;
+            content: url('../assets/images/icon-arrow-dark.svg');
+        }
+        
+    }
+
+    .dropdown-content{
+        display: none;
+        background-color: var(--gray-light);
+        padding: 1rem;
+        width: 100%;
+        border-radius: 0.5rem;
+
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        
+        a{
+            text-decoration: none;
+            color: var(--gray-medium);
+        }
+    }
+}

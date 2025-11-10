@@ -1,0 +1,77 @@
+@use '../util' as u;
+
+button{
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.header-btns{
+    @include u.flex-nowrap;
+    margin-left: auto;
+
+    @include u.mobile{
+        display: none;
+    }
+
+    .login-btn{
+        color: var(--white);
+        background: transparent;
+        border: none;
+    }
+    .sign-up-btn{
+        padding: 0.8rem 1.8rem;
+        font-weight: 700;
+        @include u.rounded;
+        @include u.white-btn;
+    }
+}
+
+.hero-btns{
+    @include u.flex-nowrap;
+    padding: 2rem;
+    button{
+        width: 7rem;
+        padding: 0.7rem;
+        font-weight: 600
+    }
+    .start-btn{
+        @include u.rounded;
+        @include u.white-btn;
+    }
+    .learn-btn{
+        @include u.rounded;
+        color: var(--white);
+        background: transparent;
+        border: 1px solid var(--white);
+        &:hover{
+            color: var(--red-light);
+            background: var(--white);
+        }
+    }
+}
+
+.header-btns-mobile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 2rem 0 1rem;
+    margin-top: 0.5rem;
+    border-top: 2px solid var(--gray-light);
+
+    .login-btn{
+        color: var(--gray-dark);
+        background: transparent;
+        border: none;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    .sign-up-btn{
+        padding: 0.8rem 1.8rem;
+        font-weight: 700;
+        @include u.rounded;
+        @include u.gradient-btn;
+    }
+}

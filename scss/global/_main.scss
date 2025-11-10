@@ -1,0 +1,86 @@
+@use '../util' as u;
+
+@font-face {
+    font-family: 'Overpass';
+    src: url('../assets/fonts/Overpass/Overpass-VariableFont_wght.ttf');
+}
+@font-face {
+    font-family: 'Ubuntu';
+    src: url('../assets/fonts/Ubuntu/Ubuntu-Regular.ttf');
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    font-family: 'Overpass', sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+section{
+    display: grid;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+    padding: 2.5rem 0 10rem;
+    margin-bottom: 5rem;
+
+    h2{
+        color: var(--blue-dark);
+        font-size: 2.3rem;
+        font-weight: 600;
+        text-align: center;
+        grid-area: title-area;
+
+        @include u.mobile{
+            font-size: 1.5rem;
+        }
+    }
+    h3{
+        color: var(--blue-dark);
+        font-size: 1.7rem;
+        font-weight: 600;
+
+        @include u.mobile{
+            text-align: center;
+            font-size: 1.3rem;
+            padding: 0 1.5rem;
+        }
+    }
+    p{
+        color: var(--gray-medium);
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.8rem;
+        padding-bottom: 3rem;
+
+        @include u.mobile{
+            text-align: center;
+            font-size: 0.9rem;
+            padding: 0 0.7rem;
+        }
+    }
+    .text{
+        grid-area: text-area;
+        padding: 5rem;
+        @include u.desktop{
+            max-width: 50%;
+        }
+        @include u.mobile{
+            padding: 1rem;
+        }
+    }
+    .main-img{
+        grid-area: img-area;
+    }
+    .mobile{
+        width: 100%;
+    }
+
+    @include u.mobile{
+        padding: 0;
+        place-items: center;
+    }
+}

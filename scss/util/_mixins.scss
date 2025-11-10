@@ -1,0 +1,59 @@
+@mixin flex-nowrap{
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+@mixin flex-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+@mixin rounded{
+    border-radius: 2rem;
+}
+
+@mixin white-btn{
+    color: var(--red-dark);
+    background: var(--white);
+    border: none;
+    &:hover{
+        color: var(--white);
+        background: var(--red-light);
+    }
+}
+
+@mixin gradient-btn{
+    color: var(--white);
+    background: linear-gradient(to right , var(--orange-gradient), var(--red-gradient));
+    border: none;
+}
+
+@mixin menu-style{
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 2rem 0.5rem var(--gray-light-transparent);
+}
+
+@mixin desktop{
+    @media (width > 768px) {
+        @content;
+    }
+}
+@mixin tablet{
+    @media (768px < width < 1024px) {
+        @content;
+    }
+}
+@mixin mobile{
+    @media (width <= 768px) {
+        @content;
+    }
+}
+@mixin mobile-s{
+    @media (width <= 375px) {
+        @content;
+    }
+}

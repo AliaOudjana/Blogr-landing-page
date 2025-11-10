@@ -1,0 +1,23 @@
+:root{
+    //Primary
+    --red-dark: hsl(356, 100%, 66%);
+    --red-light: hsl(355, 100%, 74%);
+    --blue-dark: hsl(208, 49%, 24%);
+
+    //Neutral
+    --white: hsl(0, 100%, 100%);
+    --gray-light: hsl(240, 7%, 94%);
+    --gray-medium: hsl(207, 13%, 34%);
+    --gray-dark: hsl(240, 10%, 16%);
+    --gray-light-transparent: hsla(206, 13%, 34%, 0.397);
+
+    //Gradient
+
+    //Background gradient - intro/CTA mobile nav:
+    --orange-gradient: hsl(13, 100%, 72%);
+    --red-gradient: hsl(353, 100%, 62%);
+
+    //Background gradient - body:
+    --purple-dark-gradient: hsl(237, 17%, 21%);
+    --purple-light-gradient: hsl(237, 23%, 31%);
+}

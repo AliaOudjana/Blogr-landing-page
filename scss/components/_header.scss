@@ -1,0 +1,51 @@
+@use '../util' as u;
+
+header{
+    @include u.flex-nowrap;
+    gap: 3rem;
+    width: 100%;
+    padding: 1rem 0 7rem;
+    @include u.mobile{
+        padding: 1rem 1rem 6rem 0.3rem;
+    }
+
+    .menu{
+        display: none;
+
+        &:checked + .menu-icon .icon-close{
+            display: flex;
+        }
+        &:not(:checked) + .menu-icon .icon-close{
+            display: none;
+        }
+        &:checked + .menu-icon .icon-hamburger{
+            display: none;
+        }
+        &:not(:checked) + .menu-icon .icon-hamburger{
+            display: flex;
+        }
+        &:checked ~ .nav-mobile{
+            @include u.flex-column;
+            @include u.desktop{
+                display: none;
+            }
+        }
+    }
+
+    .menu-icon{
+        margin-left: auto;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        @include u.desktop{
+            display: none;
+        }
+    }
+
+    .blogr-logo{
+        @include u.mobile{
+            scale: 0.8;
+        }
+    }
+}
